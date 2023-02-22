@@ -2,7 +2,7 @@ import java.util.*;
 
 public class BubbleSort {
     public static void main(String args[]){
-        BubbleSort b = new BubbleSort();
+        
         System.out.println("How Many Element you want to enter in array");
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
@@ -12,13 +12,14 @@ public class BubbleSort {
             arr[i] = s.nextInt();
         }
 
-        System.out.println("Sorted array is given below ");
+        System.out.println("Sorted array using Bubble sort is given below ");
 
-        b.sortArray(arr, n);
+        // since we create static method we do not need to create object of BubbleSort class we can call it without object of BubbleSort class
+        sortArray(arr, n);
 
     }
 
-    public void sortArray(int arr[], int n){
+    static void sortArray(int arr[], int n){
         for(int i=0; i<n; i++){
             for(int j=0; j<n-i-1; j++){
             int temp;
@@ -36,3 +37,7 @@ public class BubbleSort {
     }
 
 }
+
+
+
+// worst time complexity of Bubble sort algorithm is O(n2)
